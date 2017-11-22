@@ -1,0 +1,53 @@
+{
+  "name": "cmr-cl-apertura-api",
+  "version": "0.1.0",
+  "description": "permite crear una solicitud de apertura de tarjeta CMR",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm-run-all -p -r start-stubby unitTest",
+    "unitTest": "mocha './{,!(node_modules)/**/}*.spec.js'",
+    "debug": "node --debug --inspect=9222 --debug-brk app.js",
+    "start-stubby": "node node_modules/stubby/bin/stubby -d stubs/*.yaml -s 8009 -t 8443 -a 8010",
+    "integration": "mocha './{,!(node_modules)/**/}*.spec.int.js' --timeout 15000 "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/falabellafif/cmr-cl-apertura-api.git"
+  },
+  "keywords": [
+    "cmr",
+    "apertura",
+    "solicitud"
+  ],
+  "author": "Oscar Alvarez",
+  "license": "SEE LICENCE IN falabella-licence.txt",
+  "homepage": "https://bitbucket.org/falabellafif/cmr-cl-apertura-api#readme",
+  "dependencies": {
+    "body-parser": "1.15.2",
+    "cors": "2.8.1",
+    "express": "4.14.0",
+    "file-stream-rotator": "0.0.7",
+    "jsonwebtoken": "7.1.9",
+    "mongo-xlsx": "1.0.12",
+    "mongoose": "4.10.4",
+    "morgan": "1.7.0",
+    "nodemailer": "4.0.0",
+    "promise": "7.1.1",
+    "soap": "0.17.0",
+    "strong-soap": "1.2.0",
+    "telnet-client": "^0.15.0",
+    "winston": "2.3.0"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "chai-as-promised": "6.0.0",
+    "chai-http": "3.0.0",
+    "mocha": "3.2.0",
+    "mockery": "2.0.0",
+    "node-mocks-http": "1.6.1",
+    "npm-run-all": "4.0.2",
+    "sinon": "1.17.6",
+    "grunt-stubby": "0.2.1"
+  },
+  "engine": "node 6.9.1"
+}
