@@ -6,7 +6,6 @@
   "scripts": {
     "test": "npm-run-all -p -r start-stubby unitTest",
     "unitTest": "mocha './{,!(node_modules)/**/}*.spec.js'",
-    "debug": "node --debug --inspect=9222 --debug-brk app.js",
     "start-stubby": "node node_modules/stubby/bin/stubby -d stubs/*.yaml -s 8009 -t 8443 -a 8010",
     "integration": "mocha './{,!(node_modules)/**/}*.spec.int.js' --timeout 15000 "
   },
@@ -25,7 +24,7 @@
   "dependencies": {
     "body-parser": "1.15.2",
     "cors": "2.8.1",
-    "express": "4.14.0",
+    "express": "4.15.5",
     "file-stream-rotator": "0.0.7",
     "jsonwebtoken": "7.1.9",
     "mongo-xlsx": "1.0.12",
